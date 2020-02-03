@@ -21,6 +21,17 @@ class App extends Component {
           >&raquo;</button>
         </div>
 
+        <div className={classes.buttonWrap}>
+          <button
+            className={classes.subtract}
+            onClick={() => this.props.onAddNumber(-17)}
+          >&laquo; 17</button>
+          <button
+            className={classes.append}
+            onClick={() => this.props.onAddNumber(15)}
+          >15 &raquo;</button>
+        </div>
+
       </div>
     )
   }
@@ -36,7 +47,7 @@ function mapDispatchToProps(dispatch) {
   return {
     onAdd: () => dispatch({type: 'ADD'}),
     onSub: () => dispatch({type: 'SUB'}),
-    onTen: () => dispatch({type: 'TEN'})
+    onAddNumber: number => dispatch({type: 'ADD_NUMBER', payload: number})
   }
 }
 
