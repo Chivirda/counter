@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.buttonWrap {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 50%;
+  grid-gap: 10%;
+  margin: 0 auto;
+}
+
+button {
+  border: 1px solid black;
+  border-radius: 5px;
+}
