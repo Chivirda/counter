@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import classes from './App.module.css'
+import Counter from './Counter'
 
 class App extends Component {
 
@@ -32,6 +33,7 @@ class App extends Component {
           >15 &raquo;</button>
         </div>
 
+        <Counter/>
       </div>
     )
   }
@@ -39,7 +41,7 @@ class App extends Component {
 
 function mapStateToProps(state) {
   return {
-    counter: state.counter
+    counter: state.counter1.counter
   }
 }
 
