@@ -1,21 +1,19 @@
 import React, {Component} from 'react'
+import {connect} from 'react-redux'
 import classes from './App.module.css'
 
-export default class App extends Component {
-  state = {
-    counter: 0
-  }
+class App extends Component {
 
   updateCounter(value) {
-    this.setState({
-      counter: this.state.counter + value
-    })
+    // this.setState({
+    //   counter: this.state.counter + value
+    // })
   }
 
   render() {
     return (
       <div className={classes.App}>
-        <h1>Counter: {this.state.counter}</h1>
+        <h1>Counter: {this.props.counter}</h1>
         <hr/>
 
         <div className={classes.buttonWrap}>
@@ -33,3 +31,11 @@ export default class App extends Component {
     )
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    counter: state.counter
+  }
+}
+
+export default connect(mapStateToProps)(App)
